@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-first-steps';
+  title = 'App'; 
+  selectedValue: string = "Leonardo";
+  items = [
+    { value: "0", view: "zero" },
+    { value: "1", view: "one" },
+    { value: "2", view: "Two" }
+  ];
 }
