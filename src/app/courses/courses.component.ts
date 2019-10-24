@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ICourses } from './icourses';
 import { ICourses } from '../icourses';
 
 @Component({
