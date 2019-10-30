@@ -10,7 +10,6 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SectionComponent } from './section/section.component';
 import { CoursesComponent } from './courses/courses.component';
 import {AlertModule} from 'ngx-bootstrap';
-import { FilterPipePipe } from './filter-pipe.pipe';
 import { FilterPipe } from './filter.pipe';
 
 
@@ -22,7 +21,6 @@ import { FilterPipe } from './filter.pipe';
     BreadcrumbsComponent,
     SectionComponent,
     CoursesComponent,
-    FilterPipePipe,
     FilterPipe
   ],
   imports: [
