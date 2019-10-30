@@ -9,6 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SectionComponent } from './section/section.component';
 import { CoursesComponent } from './courses/courses.component';
+import {AlertModule} from 'ngx-bootstrap';
+import { FilterPipePipe } from './filter-pipe.pipe';
+import { FilterPipe } from './filter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { CoursesComponent } from './courses/courses.component';
     FooterComponent,
     BreadcrumbsComponent,
     SectionComponent,
-    CoursesComponent
+    CoursesComponent,
+    FilterPipePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,8 @@ import { CoursesComponent } from './courses/courses.component';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

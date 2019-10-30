@@ -4,6 +4,14 @@
   height: 100px;
 }
 .header h2 {
-  line-height: 100px;
   color: #fff;
+}
+.img {
+  height: 50px;
+  width: 50px;
+}
+.title {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
 }
