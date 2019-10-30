@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'App'; 
-  selectedValue: string = "Leonardo";
+  title = 'App';
+  selectedValue = 'Leonardo';
   items = [
-    { value: "0", view: "zero" },
-    { value: "1", view: "one" },
-    { value: "2", view: "Two" }
+    { value: '0', view: 'zero' },
+    { value: '1', view: 'one' },
+    { value: '2', view: 'Two' }
   ];
 }

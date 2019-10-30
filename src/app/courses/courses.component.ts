@@ -7,7 +7,7 @@ import { ICourses } from '../icourses';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-  courses:ICourses[]=[];
+  courses: ICourses [] = [];
 
   constructor() { }
 

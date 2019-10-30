@@ -22,8 +22,8 @@ import { CoursesComponent } from './courses/courses.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,    
-    MatInputModule, 
+    FormsModule,
+    MatInputModule,
     MatButtonModule,
     MatSelectModule,
     MatIconModule
