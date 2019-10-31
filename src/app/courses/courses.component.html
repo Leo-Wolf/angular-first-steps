@@ -9,10 +9,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let post of posts | filter:filterPost">
-        <th scope="row">{{post.id}}</th>
-        <td>{{post.Mark}}</td>
-        <td>{{post.Otto}}</td>
-        <td>{{post.@mdo}}</td>
+        <th >{{post.id}}</th>
+        <td>{{post.name}}</td>
+        <td>{{post.date}}</td>
+        <td>{{post.duration}}</td>
         </tr>
     </tbody>
 </table>
