@@ -22,4 +22,9 @@ describe('BreadcrumbsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as title 'Courses'`, async(() => {
+    expect(component.title).toEqual('Courses');
+  }));
+  
 });

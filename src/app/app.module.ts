@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
@@ -24,9 +24,9 @@ import { FilterPipe } from './filter.pipe';
     FilterPipe
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
