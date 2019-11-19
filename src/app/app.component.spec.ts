@@ -8,7 +8,7 @@ import { SectionComponent } from './section/section.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [

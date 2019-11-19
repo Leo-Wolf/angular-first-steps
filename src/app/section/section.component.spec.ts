@@ -3,7 +3,7 @@ import { FilterPipe } from '../filter.pipe';
 import { SectionComponent } from './section.component';
 import { FormsModule } from '@angular/forms';
 
-fdescribe('SectionComponent', () => {
+describe('SectionComponent', () => {
   let component: SectionComponent;
   let fixture: ComponentFixture<SectionComponent>;
 
