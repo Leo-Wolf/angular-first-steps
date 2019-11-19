@@ -9,6 +9,7 @@ export class SectionComponent implements OnInit {
 
   @Input() FilterPipe : FilterPipe;
   constructor() { }
+  color = 'white';
   name = 'filterPipe';
     public filterName = '';
     posts = Object.keys( [{

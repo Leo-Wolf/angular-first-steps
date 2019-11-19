@@ -4,14 +4,15 @@
             <input type="text" class="form-control" name="filterPost" placeholder="searching..." [(ngModel)]="filterName" >
         </div>
     </div>
+    <input type="text" [(ngModel)]="color">
     <div class="container align-items-center">
         <div class="row align-items-end">
             <div class="col-sm-2 offset-sm-10">
                 <button type="button" class="btn btn-primary btn-lg">+ Add course</button>
             </div>
         </div>
-        <div class="container bg-light " *ngFor="let post of posts | filterPost : filterName">   
-            <div class="row">
+        <div  class="container bg-light " *ngFor="let post of posts | filterPost : filterName">   
+            <div class="row" [appColorBorder]="color">
                 <div class="col-4 align-items-start">                        
                     <h1>{{post.name}}</h1>
                 </div> 
