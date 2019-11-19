@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FilterPipe } from '../filter.pipe';
 import { SectionComponent } from './section.component';
+import { FormsModule } from '@angular/forms';
 
 describe('SectionComponent', () => {
   let component: SectionComponent;
@@ -8,7 +9,8 @@ describe('SectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SectionComponent ]
+      declarations: [ SectionComponent ,FilterPipe ],
+      imports:[ FormsModule ]
     })
     .compileComponents();
   }));
@@ -23,3 +25,4 @@ describe('SectionComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FilterPipe } from '../filter.pipe';
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionComponent implements OnInit {
 
+  @Input() FilterPipe : FilterPipe;
   constructor() { }
   name = 'filterPipe';
-    filterPost = '';
-    posts = [{
+    public filterName = '';
+    posts = Object.keys( [{
       id: 1,
       name: 'leonardo',
       date: '03/05/1992',
@@ -29,7 +30,7 @@ export class SectionComponent implements OnInit {
       duration: '50 min',
       description: 'new tech'
 
-    }];
+    }]);
   ngOnInit() {
   }
 
