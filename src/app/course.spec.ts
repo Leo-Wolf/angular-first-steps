@@ -1,6 +1,6 @@
 import { Course } from './course';
 
-describe('Course', () => {
+fdescribe('Course', () => {
   it('should create an instance', () => {
     expect(new Course('leo course','','','')).toBeTruthy();
   });
