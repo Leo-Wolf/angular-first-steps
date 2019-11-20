@@ -5,18 +5,23 @@ import { Directive, ElementRef, HostListener , Renderer2, Input} from '@angular/
 })
 export class ColorBorderDirective {
 
-  @Input('appColorBorder') ColorBorderC:string;
+  @Input() ColorBorderC:string;
 
-  constructor( private el: ElementRef,private renderer: Renderer2) {   }
+  constructor( private el: ElementRef,private renderer: Renderer2) { 
+    //this.ColorBorder(this.ColorBorderC);
 
+    }
+    /*
   @HostListener('mouseenter') onMouseEnter(){
     this.ColorBorder(  this.ColorBorderC );
   }
   @HostListener('mouseleave') onMouseLeave(){
     this.ColorBorder(  'green');
-  }
-  private ColorBorder (color:string):void{
+  }*/
+
+  public ColorBorder (color:string):void{
    //console.log(color);
+
     this.renderer.setStyle(this.el.nativeElement, 'background-color', color);
     this.el.nativeElement.style.backgroundColor = color;
   }

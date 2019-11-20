@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Directive } from '@angular/core';
 import { FilterPipe } from '../filter.pipe';
+import { ColorBorderDirective } from '../directive/color-border.directive';
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
@@ -8,11 +9,14 @@ import { FilterPipe } from '../filter.pipe';
 export class SectionComponent implements OnInit {
 
   @Input() FilterPipe : FilterPipe;
+ // @Directive() 
   constructor() { }
   color = 'white';
+  d1 = new Date();
+
   name = 'filterPipe';
     public filterName = '';
-    posts = Object.keys( [{
+    posts =  [{
       id: 1,
       name: 'leonardo',
       date: '03/05/1992',
@@ -31,8 +35,24 @@ export class SectionComponent implements OnInit {
       duration: '50 min',
       description: 'new tech'
 
-    }]);
+    }];
   ngOnInit() {
+    for (var key in this.posts) {
+      var dateCreation = new Date(this.posts[key]['date'] );
+      var currentDate = new Date();
+      var days14less = new Date(currentDate.getDate() - 14);
+      if(dateCreation < currentDate && dateCreation >= days14less){
+        this.posts[key]['color'] = 'green';
+      }else if(dateCreation > currentDate){        
+        this.posts[key]['color'] = 'blue';
+      }else{
+        
+        this.posts[key]['color'] = 'pink';
+      }
+
+
+      //ColorBorder
+  }
   }
 
 }
