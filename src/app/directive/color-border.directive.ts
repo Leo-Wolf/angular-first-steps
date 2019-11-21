@@ -1,18 +1,18 @@
-import { Directive, ElementRef, HostListener , Renderer2, Input} from '@angular/core';
+import { Directive, ElementRef, HostListener , Renderer2, Input, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[appColorBorder]'
 })
-export class ColorBorderDirective {
+export class ColorBorderDirective implements OnInit{
 
   @Input() ColorBorderC:string;
 
-  constructor( private el: ElementRef,private renderer: Renderer2) { 
+  constructor( private el: ElementRef,private renderer: Renderer2) {
     //this.ColorBorder(this.ColorBorderC);
 
     }
     /*
-  @HostListener('mouseenter') onMouseEnter(){
+  @HostListener('change') onChange(){
     this.ColorBorder(  this.ColorBorderC );
   }
   @HostListener('mouseleave') onMouseLeave(){
@@ -25,5 +25,5 @@ export class ColorBorderDirective {
     this.renderer.setStyle(this.el.nativeElement, 'background-color', color);
     this.el.nativeElement.style.backgroundColor = color;
   }
-
+   ngOnInit() {}
 }
