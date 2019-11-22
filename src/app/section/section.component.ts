@@ -77,7 +77,6 @@ export class SectionComponent implements OnInit {
         this.posts[key]['color'] ="#fdcbfc";
       }
       /*[style.background-image]="'url(' + photo + ')'"*/
-
       //ColorBorder
   }
   }
