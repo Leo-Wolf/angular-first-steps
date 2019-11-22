@@ -11,6 +11,8 @@ import {AlertModule} from 'ngx-bootstrap';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
  import { ReactiveFormsModule } from '@angular/forms';
+import { ColorBorderDirective } from './directive/color-border.directive';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     BreadcrumbsComponent,
     SectionComponent,
-    FilterPipe
+    FilterPipe,
+    ColorBorderDirective
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     AlertModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
