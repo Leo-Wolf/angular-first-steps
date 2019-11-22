@@ -13,7 +13,15 @@ export class ColorBorderDirective implements OnInit{
     }
 
   @HostListener('click') onChange(){
-    this.ColorBorder(  '#C9B037' );
+    var x = this.el.nativeElement.style.borderLeft;
+    console.log(x);
+    if(x === "6px solid rgb(201, 176, 55)"){
+      this.el.nativeElement.style.borderLeft = "";
+    }else{
+      
+      this.el.nativeElement.style.borderLeft = "6px solid #C9B037" ;
+    }
+    //this.ColorBorder(  '#C9B037' );
   } /*
   @HostListener('mouseleave') onMouseLeave(){
     this.ColorBorder(  'green');
@@ -22,8 +30,8 @@ export class ColorBorderDirective implements OnInit{
   public ColorBorder (color:string):void{
    //console.log(color);
     //if(color != '#C9B037' ){
-        this.renderer.setStyle(this.el.nativeElement, 'background-color', color);
-        this.el.nativeElement.style.backgroundColor = color;
+        //this.renderer.setStyle(this.el.nativeElement, 'border-left', "6px solid " +color);
+        this.el.nativeElement.style.borderLeft = "6px solid " +color;
     //}
     /*
     this.renderer.setStyle(this.el.nativeElement, 'background-color', "white");

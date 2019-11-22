@@ -22,39 +22,41 @@ export class SectionComponent implements OnInit {
       id: 1,
       name: 'leonardo',
       date: '12/12/2022',
-      duration: '120 min',
+      duration: '120',
       description: 'new tech'
     },{
       id: 2,
       name: 'david',
       date: '11/21/2019',
-      duration: '45 min',
+      duration: '45',
       description: 'new tech'
     },{
       id: 3,
       name: 'jorge',
       date: '04/09/2012',
-      duration: '50 min',
+      duration: '60',
       description: 'new tech'
 
     },{
        id: 4,
        name: 'jorge',
        date: '04/09/2012',
-       duration: '50 min',
+       duration: '50',
        description: 'new tech'
 
      },{
         id: 5,
         name: 'jorge',
         date: '04/09/2012',
-        duration: '50 min',
+        duration: '50',
         description: ''
 
       }];
   ngOnInit() {
     for (var key in this.posts) {
       var dateCreation = new Date(this.posts[key]['date'] );
+      this.posts[key]['duration'] = this.timeConvert(this.posts[key]['duration']);
+
       var currentDate = new Date();
       var days14less = new Date();
       var x = "x = {'background-color':'pink'}";
@@ -67,17 +69,28 @@ export class SectionComponent implements OnInit {
       console.log(dateCreation > currentDate );*/
 
       if(dateCreation < currentDate && dateCreation >= days14less){
-        this.posts[key]['color'] = "green";
+        this.posts[key]['color'] = "#97ffb6";
       }else if(dateCreation > currentDate){
-        this.posts[key]['color'] = "blue";
+        this.posts[key]['color'] = "#97f9ff";
       }else{
 
-        this.posts[key]['color'] ="pink";
+        this.posts[key]['color'] ="#fdcbfc";
       }
       /*[style.background-image]="'url(' + photo + ')'"*/
 
       //ColorBorder
   }
   }
+   timeConvert(n) {
+    var num = n;
+    var hours = (num / 60);
+    var rhours = Math.floor(hours);
+    var minutes = (hours - rhours) * 60;
+    var rminutes = Math.round(minutes);
+    if( rhours === 0){
+      return rminutes +" mins";
+    }
+    return  rhours + "h : " + rminutes +" mins";
+    }
 
 }

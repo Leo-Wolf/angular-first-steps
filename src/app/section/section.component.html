@@ -12,19 +12,18 @@
             </div>
         </div>
         <div  class="container bg-light " *ngFor="let post of posts | filterPost : filterName" >
-            <div class="container" [ngStyle]="{'background-color':  post.color}" appColorBorder>
+            <div class="container" [ngStyle]="{'background-color':post.color}" appColorBorder>
                 <div class="row" >
                     <div class="col-4 align-items-start" >
-                        <h1>{{post.name}}</h1>
-                        <p> click to rated<i class="material-icons" src="./src/assets/img/start.svg">star</i></p>
+                        <h1>{{post.name|uppercase }}<i class="material-icons" >star</i></h1>
                     </div>
-                    <div class="col-3">
-                        </div>
-                    <div class="col-2  align-items-center">
-                        <h4>{{post.date}}</h4>
+                    <div class="col-1">
                     </div>
-                    <div class="col-1 align-items-center">
-                        <h4>{{post.duration}}</h4>
+                    <div class="col-3  align-items-center">
+                        <h4>{{post.date | date}} <i class="material-icons"> date_range</i></h4>
+                    </div>
+                    <div class="col-2 align-items-center">
+                        <h4>{{post.duration }}</h4>
                     </div>
                     <div class="col-1 align-items-center">
                         <button type="button" class="btn btn-warning ">Edit  </button>
@@ -49,8 +48,6 @@
                       <p>Without Description</p>
                     </div>
                   </ng-template>
-
-                  {{value}}
                 </div>
             </div>
         </div>
