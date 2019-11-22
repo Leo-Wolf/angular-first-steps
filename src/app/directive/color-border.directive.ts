@@ -11,19 +11,24 @@ export class ColorBorderDirective implements OnInit{
     //this.ColorBorder(this.ColorBorderC);
 
     }
-    /*
-  @HostListener('change') onChange(){
-    this.ColorBorder(  this.ColorBorderC );
-  }
+
+  @HostListener('click') onChange(){
+    this.ColorBorder(  '#C9B037' );
+  } /*
   @HostListener('mouseleave') onMouseLeave(){
     this.ColorBorder(  'green');
   }*/
 
   public ColorBorder (color:string):void{
    //console.log(color);
-
-    this.renderer.setStyle(this.el.nativeElement, 'background-color', color);
-    this.el.nativeElement.style.backgroundColor = color;
+    //if(color != '#C9B037' ){
+        this.renderer.setStyle(this.el.nativeElement, 'background-color', color);
+        this.el.nativeElement.style.backgroundColor = color;
+    //}
+    /*
+    this.renderer.setStyle(this.el.nativeElement, 'background-color', "white");
+    this.el.nativeElement.style.backgroundColor = "white";
+    */
   }
    ngOnInit() {}
 }
