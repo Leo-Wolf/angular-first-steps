@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, Directive } from '@angu
 import { FilterPipe } from '../filter.pipe';
 import { ColorBorderDirective } from '../directive/color-border.directive';
 import { CommonModule } from '@angular/common';
+import { CourseService } from '../course.service'
 
 @Component({
   selector: 'app-section',
@@ -9,49 +10,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./section.component.scss']
 })
 export class SectionComponent implements OnInit {
-
+  posts:any[] = [];
   @Input() FilterPipe : FilterPipe;
- // @Directive()
-  constructor() { }
+
+  constructor(private _service:CourseService) {
+    this.posts = _service.obtenerCourso();
+   }
+
   color = 'white';
   d1 = new Date();
-
   name = 'filterPipe';
-    public filterName = '';
-    posts =  [{
-      id: 1,
-      name: 'leonardo',
-      date: '12/12/2022',
-      duration: '120',
-      description: 'new tech'
-    },{
-      id: 2,
-      name: 'david',
-      date: '11/21/2019',
-      duration: '45',
-      description: 'new tech'
-    },{
-      id: 3,
-      name: 'jorge',
-      date: '04/09/2012',
-      duration: '60',
-      description: 'new tech'
+  public filterName = '';
 
-    },{
-       id: 4,
-       name: 'jorge',
-       date: '04/09/2012',
-       duration: '50',
-       description: 'new tech'
-
-     },{
-        id: 5,
-        name: 'jorge',
-        date: '04/09/2012',
-        duration: '50',
-        description: ''
-
-      }];
   ngOnInit() {
     for (var key in this.posts) {
       var dateCreation = new Date(this.posts[key]['date'] );
@@ -61,12 +31,6 @@ export class SectionComponent implements OnInit {
       var days14less = new Date();
       var x = "x = {'background-color':'pink'}";
       days14less.setDate(days14less.getDate() - 14);
-     /* console.log(dateCreation +" date creation");
-      console.log( currentDate +" Current Date ");
-      console.log( days14less +" Current minus 14");
-      console.log(dateCreation < currentDate && dateCreation >= days14less );
-
-      console.log(dateCreation > currentDate );*/
 
       if(dateCreation < currentDate && dateCreation >= days14less){
         this.posts[key]['color'] = "#97ffb6";
@@ -76,8 +40,6 @@ export class SectionComponent implements OnInit {
 
         this.posts[key]['color'] ="#fdcbfc";
       }
-      /*[style.background-image]="'url(' + photo + ')'"*/
-      //ColorBorder
   }
   }
    timeConvert(n) {

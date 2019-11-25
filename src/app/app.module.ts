@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
  import { ReactiveFormsModule } from '@angular/forms';
 import { ColorBorderDirective } from './directive/color-border.directive';
 import { CommonModule } from '@angular/common';
-
+import { CourseService } from './course.service'
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     CommonModule
   ],
-  providers: [],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
