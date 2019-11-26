@@ -14,13 +14,14 @@ export class SectionComponent implements OnInit {
   @Input() FilterPipe : FilterPipe;
 
   constructor(private _service:CourseService) {
-    this.posts = _service.obtenerCourso();
+    this.posts = _service.getList();
    }
 
   color = 'white';
   d1 = new Date();
   name = 'filterPipe';
   public filterName = '';
+  a:number = 0;
 
   ngOnInit() {
     for (var key in this.posts) {
@@ -41,6 +42,9 @@ export class SectionComponent implements OnInit {
         this.posts[key]['color'] ="#fdcbfc";
       }
   }
+  }
+  deleteCourseById(id:number){
+    this._service.deleteCourseById(id);
   }
    timeConvert(n) {
     var num = n;

@@ -39,8 +39,39 @@ posts:any[] = [{
 
   }];
   constructor() { console.log("funcionando")}
-
-  obtenerCourso(){
+  //get list
+  getList(){
     return this.posts;
+  }
+  //create course
+  setCourse(newName:string, newDate:string, newDuration:number, newDescription:string){
+    let newCourse:any[] =[{
+      name:newName, 
+      date:newDate, 
+      duration:newDuration, 
+      description:newDescription
+    }]
+    if(this.posts.push(newCourse) !== -1){
+      //Alert succefull
+    }else{
+      //something wrong
+    }
+  }
+  //get item by id
+  getCourseById(id:number){
+    return this.posts[id];
+  }
+  //update item
+  setCourseById(id:number,updateName:string, updateDate:string, updateDuration:number, updateDescription:string){ 
+    this.posts[id]['name'] = updateName;
+    this.posts[id]['date'] = updateDate;
+    this.posts[id]['duration'] = updateDuration;
+    this.posts[id]['description'] = updateDescription;
+    //return this.posts[id];
+    //Succefully
+  }
+  //remove item
+  deleteCourseById(id:number){
+    this.posts.slice(id);
   }
 }

@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
  import { ReactiveFormsModule } from '@angular/forms';
 import { ColorBorderDirective } from './directive/color-border.directive';
 import { CommonModule } from '@angular/common';
-import { CourseService } from './course.service'
+import { CourseService } from './course.service';
+import { EventsDirective } from './directive/events.directive'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CourseService } from './course.service'
     BreadcrumbsComponent,
     SectionComponent,
     FilterPipe,
-    ColorBorderDirective
+    ColorBorderDirective,
+    EventsDirective
   ],
   imports: [
     BrowserModule,
