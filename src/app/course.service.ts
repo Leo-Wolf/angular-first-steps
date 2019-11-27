@@ -72,6 +72,12 @@ posts:any[] = [{
   }
   //remove item
   deleteCourseById(id:number){
-    this.posts.slice(id);
+    console.log( id+1);
+    let course =   this.posts.splice(id+1 , 1);
+    this.getList();
+    //console.log( course);
+    
+    console.log( this.posts);
+    return this.posts;
   }
 }

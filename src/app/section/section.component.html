@@ -9,7 +9,7 @@
     <!--<input type="text" [(ngModel)]="color">-->
     <!--<div class="container align-items-center">-->        
         <div class="row align-items-center" [ngStyle]="{'margin-left': '15%','margin-right': '15%'}">
-        <div  class="container  bg-light " *ngFor="let post of posts | filterPost : filterName ,let a = index" >
+        <div  class="container  bg-light " *ngFor="let post of posts | filterPost : filterName; let a = index; async"  >
             <div class="container" [ngStyle]="{'background-color':post.color}" >
                 <div class="row" >
                     <div class="col-4 align-items-start" appColorBorder>
@@ -27,7 +27,7 @@
                         <button type="button" class="btn btn-warning ">Edit {{a}} </button>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn btn-danger" ng-click='deleteCourseById({a})' >Delete</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteCourseById(a);">Delete</button>
                     </div>
                 </div>
                 <div class="row" >

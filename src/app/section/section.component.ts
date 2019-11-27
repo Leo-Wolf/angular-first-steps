@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, Directive } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, OnChanges, Output, Directive, ɵConsole, ChangeDetectorRef, SimpleChanges  } from '@angular/core';
 import { FilterPipe } from '../filter.pipe';
 import { ColorBorderDirective } from '../directive/color-border.directive';
 import { CommonModule } from '@angular/common';
@@ -9,20 +9,26 @@ import { CourseService } from '../course.service'
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']
 })
-export class SectionComponent implements OnInit {
+export class SectionComponent implements OnInit,OnChanges {
   posts:any[] = [];
-  @Input() FilterPipe : FilterPipe;
-
-  constructor(private _service:CourseService) {
-    this.posts = _service.getList();
-   }
-
   color = 'white';
   d1 = new Date();
   name = 'filterPipe';
   public filterName = '';
   a:number = 0;
 
+  @Input() FilterPipe : FilterPipe;
+  //@Input() data:post[];
+
+  constructor(private _service:CourseService,private cd: ChangeDetectorRef ) {
+    this.posts = _service.getList();
+   }
+   ngOnChanges(changes:SimpleChanges){
+
+  }
+   refresh(){
+     this.cd.detectChanges();
+   }
   ngOnInit() {
     for (var key in this.posts) {
       var dateCreation = new Date(this.posts[key]['date'] );
@@ -43,8 +49,10 @@ export class SectionComponent implements OnInit {
       }
   }
   }
-  deleteCourseById(id:number){
-    this._service.deleteCourseById(id);
+  deleteCourseById(id:number):any{
+    this.posts  =  this._service.deleteCourseById(id);   
+    
+    console.log( this.posts); 
   }
    timeConvert(n) {
     var num = n;
