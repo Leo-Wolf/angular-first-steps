@@ -71,13 +71,32 @@ posts:any[] = [{
     //Succefully
   }
   //remove item
-  deleteCourseById(id:number){
-    console.log( id+1);
-    let course =   this.posts.splice(id+1 , 1);
-    this.getList();
-    //console.log( course);
-    
-    console.log( this.posts);
-    return this.posts;
+  deleteCourseById( arr:any[], id:number /*id:number*/){
+    //function arrayRemove(arr, value) {
+      console.log(id);
+      for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        if (index == id){
+          console.log(element);
+            arr.splice(index , 1);
+        }        
+      }
+      
+      console.log(arr);
+      return arr;
+    }/*
+      return arr.filter(this.checkAdult, value);
+   }
+   checkAdult(age, index) {
+    return age != index;
   }
+   
+  // var result = arrayRemove(array, 6);
+
+
+   /* console.log( id+1);
+    var cursos:any[] = this.posts;
+    this.posts =  cursos.splice(id , 1);
+    return cursos;
+  }*/
 }

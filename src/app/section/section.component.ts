@@ -9,13 +9,14 @@ import { CourseService } from '../course.service'
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']
 })
-export class SectionComponent implements OnInit,OnChanges {
-  posts:any[] = [];
+export class SectionComponent implements OnInit, OnChanges {
+  public posts:any[] = [];
   color = 'white';
   d1 = new Date();
   name = 'filterPipe';
   public filterName = '';
   a:number = 0;
+  cursos:any[];
 
   @Input() FilterPipe : FilterPipe;
   //@Input() data:post[];
@@ -23,11 +24,16 @@ export class SectionComponent implements OnInit,OnChanges {
   constructor(private _service:CourseService,private cd: ChangeDetectorRef ) {
     this.posts = _service.getList();
    }
+   deleteCourseById(id:number){    
+      this.cursos =  this._service.deleteCourseById(this.posts , id); 
+      this.posts = [];
+      this.posts = this.cursos;  
+    }
    ngOnChanges(changes:SimpleChanges){
 
   }
    refresh(){
-     this.cd.detectChanges();
+    //this.cd.detectChanges();
    }
   ngOnInit() {
     for (var key in this.posts) {
@@ -49,11 +55,12 @@ export class SectionComponent implements OnInit,OnChanges {
       }
   }
   }
-  deleteCourseById(id:number):any{
-    this.posts  =  this._service.deleteCourseById(id);   
-    
-    console.log( this.posts); 
-  }
+  /*trackByFn(index:number, movie:any): void {
+    console.log(index +" index ");
+    console.log( movie.id);
+    //return movie.id;
+  }*/
+
    timeConvert(n) {
     var num = n;
     var hours = (num / 60);
