@@ -67,8 +67,6 @@ posts:any[] = [{
     this.posts[id]['date'] = updateDate;
     this.posts[id]['duration'] = updateDuration;
     this.posts[id]['description'] = updateDescription;
-    //return this.posts[id];
-    //Succefully
   }
   //remove item
   deleteCourseById( arr:any[], id:number /*id:number*/){
@@ -84,19 +82,5 @@ posts:any[] = [{
       
       console.log(arr);
       return arr;
-    }/*
-      return arr.filter(this.checkAdult, value);
-   }
-   checkAdult(age, index) {
-    return age != index;
-  }
-   
-  // var result = arrayRemove(array, 6);
-
-
-   /* console.log( id+1);
-    var cursos:any[] = this.posts;
-    this.posts =  cursos.splice(id , 1);
-    return cursos;
-  }*/
+    }
 }

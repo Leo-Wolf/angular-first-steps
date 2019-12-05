@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ColorBorderDirective } from './directive/color-border.directive';
 import { CommonModule } from '@angular/common';
 import { CourseService } from './course.service';
+import { LoginComponent } from './login/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CourseService } from './course.service';
     SectionComponent,
     FilterPipe,
     ColorBorderDirective,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
