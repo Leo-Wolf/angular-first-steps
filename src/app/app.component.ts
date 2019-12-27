@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'filterPipe';
-  public log:boolean;
+  public log;
 
 }

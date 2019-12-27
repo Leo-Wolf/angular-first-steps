@@ -12,7 +12,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,FormsModule
+        RouterTestingModule, FormsModule
       ],
       declarations: [
         AppComponent,
@@ -25,10 +25,9 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async() => {
+  it('should create the app', async () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-  
 });

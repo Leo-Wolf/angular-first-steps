@@ -26,5 +26,4 @@ describe('BreadcrumbsComponent', () => {
   it(`should have as title 'Courses'`, async(() => {
     expect(component.title).toEqual('Courses');
   }));
-  
 });
