@@ -20,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     BreadcrumbsComponent,
     SectionComponent,
-    FilterPipe
+    FilterPipe,
+    ColorBorderDirective
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     AlertModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
