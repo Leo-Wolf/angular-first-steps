@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
-fdescribe('BreadcrumbsComponent', () => {
+describe('BreadcrumbsComponent', () => {
   let component: BreadcrumbsComponent;
   let fixture: ComponentFixture<BreadcrumbsComponent>;
 
@@ -26,5 +26,5 @@ fdescribe('BreadcrumbsComponent', () => {
   it(`should have as title 'Courses'`, async(() => {
     expect(component.title).toEqual('Courses');
   }));
-  
+
 });

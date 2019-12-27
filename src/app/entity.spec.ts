@@ -1,6 +1,6 @@
 import { Entity } from './entity';
 
-fdescribe('Entity', () => {
+describe('Entity', () => {
   it('should create an instance', () => {
     expect(new Entity()).toBeTruthy();
   });
