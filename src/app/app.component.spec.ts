@@ -12,7 +12,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,FormsModule
+        RouterTestingModule, FormsModule
       ],
       declarations: [
         AppComponent,
@@ -30,5 +30,5 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-  
+
 });
