@@ -7,6 +7,7 @@ public Title: string;
 public Creation: string;
 public date: string;
 public Description: string;
+public color?: string;
 
 constructor( title: string, creaction: string, date: string, description: string ) {
     this.Title       = title;
