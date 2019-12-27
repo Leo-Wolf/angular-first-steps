@@ -7,7 +7,7 @@ import { FilterPipe } from '../filter.pipe';
 })
 export class SectionComponent implements OnInit {
 
-  @Input() FilterPipe : FilterPipe;
+  @Input() FilterPipe: FilterPipe;
   constructor() { }
   name = 'filterPipe';
     public filterName = '';
@@ -17,13 +17,13 @@ export class SectionComponent implements OnInit {
       date: '03/05/1992',
       duration: '120 min',
       description: 'new tech'
-    },{  
+    }, {
       id: 2,
       name: 'david',
       date: '03/08/2002',
       duration: '45 min',
       description: 'new tech'
-    },{  
+    }, {
       id: 3,
       name: 'jorge',
       date: '04/09/2012',

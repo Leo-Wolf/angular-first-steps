@@ -1,8 +1,9 @@
-.header {
+.footer {
   width: 100%;
   background-color: #003a60;
+  text-align: center;
   height: 100px;
 }
-.header h2 {
+.footer h2 {
   color: #fff;
 }
