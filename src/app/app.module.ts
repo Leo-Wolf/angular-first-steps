@@ -7,14 +7,21 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SectionComponent } from './section/section.component';
-import {AlertModule} from 'ngx-bootstrap';
+import { AlertModule} from 'ngx-bootstrap';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ColorBorderDirective } from './directive/color-border.directive';
 import { CommonModule } from '@angular/common';
 import { CourseService } from './course.service';
-import { LoginComponent } from './login/login/login.component';
+import { LoginComponent } from './login/login.component';
+import { appRoutingModule } from './app.routing';
+import { RegisterComponent } from './register';
+import { HomeComponent } from './home';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+// used to create fake backend
+import { fakeBackendProvider } from './_helpers';
 
 @NgModule({
   declarations: [
@@ -26,8 +33,11 @@ import { LoginComponent } from './login/login/login.component';
     FilterPipe,
     ColorBorderDirective,
     LoginComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
+    appRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatInputModule,
@@ -37,9 +47,17 @@ import { LoginComponent } from './login/login/login.component';
     AlertModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     CommonModule
   ],
-  providers: [CourseService],
+  providers: [
+    CourseService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
