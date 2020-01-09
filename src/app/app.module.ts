@@ -20,7 +20,6 @@ import { appRoutingModule } from './app.routing';
 import { RegisterComponent } from './register';
 import { HomeComponent } from './home';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-// used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 
 @NgModule({
@@ -54,8 +53,6 @@ import { fakeBackendProvider } from './_helpers';
     CourseService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-    // provider used to create fake backend
     fakeBackendProvider
   ],
   bootstrap: [AppComponent]

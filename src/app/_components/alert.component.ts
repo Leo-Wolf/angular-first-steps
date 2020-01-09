@@ -1,9 +1,7 @@
-﻿import { AlertService } from './../_services/alert.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+﻿import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AlertService } from './../_services/alert.service';
 
-
-// tslint:disable-next-line: component-selector
 @Component({ selector: 'alert', templateUrl: 'alert.component.html' })
 export class AlertComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
