@@ -20,6 +20,7 @@ export class SectionComponent implements OnInit {
     posts =  [{
       id: 1,
       name: 'leonardo',
+
       date: '12/12/2022',
       duration: '120',
       description: 'new tech',

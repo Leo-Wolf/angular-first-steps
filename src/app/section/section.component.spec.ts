@@ -9,8 +9,8 @@ describe('SectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SectionComponent ,FilterPipe ],
-      imports:[ FormsModule ]
+      declarations: [ SectionComponent , FilterPipe ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));

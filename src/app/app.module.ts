@@ -7,13 +7,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SectionComponent } from './section/section.component';
-import {AlertModule} from 'ngx-bootstrap';
+import { AlertModule} from 'ngx-bootstrap';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ColorBorderDirective } from './directive/color-border.directive';
 import { CommonModule } from '@angular/common';
-
 
 @NgModule({
   declarations: [
